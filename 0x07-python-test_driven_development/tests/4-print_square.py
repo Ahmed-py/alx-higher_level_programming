@@ -1,30 +1,72 @@
-#!/usr/bin/python3
-"""
-
-This module is composed by a function that prints a square with the character #
-
-"""
+>>> print_square = __import__('4-print_square').print_square
 
 
-def print_square(size):
-    """ Function that prints a square with the character #
+#TypeError
 
-    Args:
-        size: size of the square printed
+    ### size must be an integer
 
-    Returns:
-        No return
+    >>> print_square(True)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
 
-    Raises:
-        TypeError: If size is not an integer number
+    >>> print_square("2795")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+    ## size can not be a float
+
+    >>> print_square(27.95)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(-27.95)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
 
 
-    """
 
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
+#ValueError 
 
-    for i in range(size):
-        print("#" * size)
+    ### size must be positive
+
+    >>> print_square(-2795)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print_square(-98)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+
+
+#General Case
+
+    >>> print_square(0)
+
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(2)
+    ##
+    ##
+
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########

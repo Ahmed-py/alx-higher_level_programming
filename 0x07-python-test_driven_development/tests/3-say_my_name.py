@@ -1,31 +1,32 @@
-#!/usr/bin/python3
-"""
-
-This module is composed by a function prints a message
-
-"""
+>>> say_my_name = __import__('3-say_my_name').say_my_name
 
 
-def say_my_name(first_name, last_name=""):
-    """ Function that prints "My name is <first name> <last name>"
+#TypeError
 
-    Args:
-        first_name: first name
-        last_name: last name
+    ### first_name and last_name must be strings
 
-    Returns:
-        No return
+    >>> say_my_name(True)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
 
-    Raises:
-        TypeError: If first_name or last_name is not a string
+    >>> say_my_name("Max", 2795)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 
-    """
 
-    if type(first_name) is not str:
-        raise TypeError("first_name must be a string")
+#General Case
 
-    if type(last_name) is not str:
-        raise TypeError("last_name must be a string")
+    >>> say_my_name("Max")
+    My name is Max 
 
-    print("My name is {} {}".format(first_name, last_name))
+    >>> say_my_name("Holberton", "School")
+    My name is Holberton School

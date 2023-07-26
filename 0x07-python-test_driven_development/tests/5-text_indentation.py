@@ -1,36 +1,51 @@
-#!/usr/bin/python3
-"""
-
-Module composed by a function that prints 2 new lines after ".?:" characters
-
-"""
+>>> text_ind = __import__('5-text_indentation').text_indentation
 
 
-def text_indentation(text):
-    """ Function that prints 2 new lines after ".?:" characters
+#TypeError
 
-    Args:
-        text: input string
+    ### text must be a string
 
-    Returns:
-        No return
+    >>> text_ind()
+    Traceback (most recent call last):
+    TypeError:
 
-    Raises:
-        TypeError: If text is not a string
+    >>> text_ind(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_ind(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_ind('0')
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_ind(1024)
+    Traceback (most recent call last):
+    TypeError: text must be a string
 
 
-    """
 
-    if type(text) is not str:
-        raise TypeError("text must be a string")
+#General Case
 
-    s = text[:]
+    >>> text_ind(".")
+    <BLANKLINE>
 
-    for d in ".?:":
-        list_text = s.split(d)
-        s = ""
-        for i in list_text:
-            i = i.strip(" ")
-            s = i + d if s is "" else s + "\n\n" + i + d
+    >>> text_ind("?")
+    <BLANKLINE>
 
-    print(s[:-3], end="")
+    >>> text_ind(":")
+    <BLANKLINE>
+
+    >>> text_ind(":a:")
+    <BLANKLINE>
+    a
+    <BLANKLINE>
+
+    >>> text_ind(".Holberton:School?")
+    <BLANKLINE>
+    Holberton
+    <BLANKLINE>
+    School
+    <BLANKLINE>
