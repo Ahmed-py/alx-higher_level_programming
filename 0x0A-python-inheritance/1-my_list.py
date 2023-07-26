@@ -1,9 +1,21 @@
 #!/usr/bin/python3
-""" class MyList that inherits from list """
+"""
+1-my_list.py
+Test file: 1-my_list.txt
+Class: MyList
+Method(s): print_sorted
+To test this method, run:
+python3 -m doctest ./test/1-my_list.txt
+"""
 
 
 class MyList(list):
-    """ add public instance method that prints the list, but sorted """
+    """
+    A class to customize the list class (inherite from list)
+    """
     def print_sorted(self):
-
-        print(sorted(self))
+        """
+        prints a list in ascending order
+        """
+        if issubclass(MyList, list):
+            print(sorted(self))
