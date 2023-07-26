@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""" write a class based on previous task """
+
+
 class BaseGeometry:
-    """ Empty class """
+    """ raise an exception with a message """
     def area(self):
+
         raise Exception("area() is not implemented")

@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Write an empy class """
+
+
 class BaseGeometry:
-    """ Empty class """
+    """ class """
     pass

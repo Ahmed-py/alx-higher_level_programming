@@ -1,15 +1,14 @@
 #!/usr/bin/python3
+""" function that returns True if the object is an instance inherited """
+
+
 def inherits_from(obj, a_class):
-    """ Function that returns True/False if obj is an instance of a_class
+    """ method that will return """
 
-    Args:
-        obj: object
-        a_class: class type
-
-    Returns:
-        True if obj is an instance of a_class
-        False, otherwise
-    """
-    if type(obj) is a_class:
+    if isinstance(obj, a_class) is False:
         return False
-    return isinstance(obj, a_class)
+
+    elif type(obj) is a_class:
+        return False
+
+    return True
