@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-""" function that returns list of avail attributes & methods of an object """
+"""
+0-lookup.py
+You are not allowed to import any module.
+Function: lookup.
+"""
 
 
 def lookup(obj):
-    """ returns a list object """
-    return(dir(obj))
+    """
+    Returns the list of available attributes and methods of an object
+    """
+    return dir(obj)
